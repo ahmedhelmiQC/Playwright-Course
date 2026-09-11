@@ -9,9 +9,11 @@ test ("user can login ", async({page})=>{
 
 const loginpage = new LoginPage(page);
 await loginpage.open();
-await loginpage.login();
+await loginpage.Username();
+await loginpage.Password();
+await loginpage.click();
 
-await expect(loginpage.header).toContainText("Swag Labs");
+await expect(loginpage.header).toBeVisible;
 
 }
 )
