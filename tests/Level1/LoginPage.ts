@@ -15,18 +15,21 @@ export class LoginPage extends basePage{
         this.lognBTn  = page.getByRole('button', { name: 'Login' });
         this.header   =  page.getByText("swag labs");
     }
-    
+    readonly user = {
+        username: "standard_user",
+        password: "secret_sauce",
+    };
 
     override async open(): Promise<void> {
       await super.open();
     }
 
     async Username():Promise<void>{
-        await this.username.fill("standard_user");
+        await this.username.fill(this.user.username);
     }
 
    async Password():Promise<void>{
-    await this.password.fill("secret_sauce");
+    await this.password.fill(this.user.password);
    }
 
    async click():Promise<void>{
