@@ -24,15 +24,15 @@ export class LoginPage extends basePage{
       await super.open();
     }
 
-    async Username():Promise<void>{
+    async fillUsername():Promise<void>{
         await this.username.fill(this.user.username);
     }
 
-   async Password():Promise<void>{
+   async fillPassword():Promise<void>{
     await this.password.fill(this.user.password);
    }
 
-   async click():Promise<void>{
+   async clickBtn():Promise<void>{
     await this.lognBTn.click;
    }
 

@@ -9,11 +9,11 @@ test ("user can login ", async({page})=>{
 
 const loginpage = new LoginPage(page);
 await loginpage.open();
-await loginpage.Username();
-await loginpage.Password();
-await loginpage.click();
+await loginpage.fillUsername();
+await loginpage.fillPassword();
+await loginpage.clickBtn();
 
-await expect(loginpage.header).toBeVisible;
+await expect(loginpage.header).toBeVisible();
 
 }
 )
