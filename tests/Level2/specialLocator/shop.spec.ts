@@ -24,6 +24,6 @@ test("select Products", async({page})=>{
     await shoppage.selectProduct1();
     await shoppage.selectProduct2();
     
-    expect(shoppage.checkout).toContainText("2");
+    expect(shoppage.checkout).toContainText("Checkout ( 2 )");
 
 })
