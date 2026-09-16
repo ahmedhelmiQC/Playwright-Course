@@ -11,7 +11,7 @@ const loginpage = new LoginPage(page);
 await loginpage.open();
 await loginpage.fillUsername();
 await loginpage.fillPassword();
-await loginpage.clickBtn();
+await loginpage.clickLoginBtn();
 
 await expect(loginpage.header).toBeVisible();
 

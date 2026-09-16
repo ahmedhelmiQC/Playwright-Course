@@ -32,7 +32,7 @@ export class LoginPage extends basePage{
     await this.password.fill(this.user.password);
    }
 
-   async clickBtn():Promise<void>{
+   async clickLoginBtn():Promise<void>{
     await this.lognBTn.click;
    }
 
