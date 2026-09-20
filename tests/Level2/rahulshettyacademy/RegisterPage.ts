@@ -63,4 +63,5 @@ export class RegisterPage extends basePage{
         await this.loginBtn.click();
     }
 
+    
 }

@@ -24,4 +24,5 @@ test("user Buy ZARA COAT",async({page})=>{
         await addtocard.addtocart();
         await payment.fillPaymentForm();
 
+        
 })

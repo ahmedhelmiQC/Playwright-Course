@@ -14,7 +14,6 @@ export class DashboardPage extends basePage{
         this.checkoutBtn      = page.getByRole("button",{name:"Checkout"});
        
     }
-
     
     async addtocart():Promise<void>{
         await this.coatCard.click();
