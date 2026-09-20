@@ -17,15 +17,15 @@ test("user Buy ZARA COAT",async({page})=>{
     const payment = new PaymentPage(page);
 
         
-        await rigisterpage.open();
-   // await rigisterpage.fillRegisterForm();
+    await rigisterpage.open();
+     await rigisterpage.fillRegisterForm();
     
     
     await loginpage.fillLoginForm();
     await loginpage.handeltabs();
 
-   // await addtocard.addtocart();
+    await addtocard.addtocart();
 
-   // await payment.fillPaymentForm();
+    await payment.fillPaymentForm();
 
 })
