@@ -1,9 +1,9 @@
 import{test,expect} from "@playwright/test"
-import { basePage } from "./basePage";
-import { RegisterPage } from "./RegisterPage";
-import{LoginPage} from"./LoginPage";
-import{DashboardPage} from"./DashboardPage";
-import { PaymentPage } from "./PaymentPage";
+import { basePage } from "../../Pages/basePage";
+import { RegisterPage } from "../../Pages/RegisterPage";
+import{LoginPage} from"../../Pages/LoginPage";
+import{DashboardPage} from"../../Pages/DashboardPage";
+import { PaymentPage } from "../../Pages/PaymentPage";
 
 
 test.use({

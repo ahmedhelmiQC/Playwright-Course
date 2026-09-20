@@ -46,7 +46,7 @@ export class RegisterPage extends basePage{
         await super.open();
     }
 
-    
+
     async fillRegisterForm():Promise<void>{
         await this.RegisterLink.click();
         await this.firstName.fill(this.data.firstName);

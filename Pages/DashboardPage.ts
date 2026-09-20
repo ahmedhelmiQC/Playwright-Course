@@ -21,6 +21,6 @@ export class DashboardPage extends basePage{
         await this.cardBtn.click();
         await this.checkoutBtn.click();
     }
-    
+
 }
 
