@@ -41,6 +41,6 @@ export class LoginPage extends basePage{
         await expect(this.acceleratorLinlk).toBeVisible();
        
     }
-    
+ 
 
 }

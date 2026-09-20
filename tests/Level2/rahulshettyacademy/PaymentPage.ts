@@ -44,5 +44,5 @@ export class PaymentPage extends basePage{
         await this.placeorder.click();
     }
     
-    
+
 }
