@@ -18,14 +18,10 @@ test("user Buy ZARA COAT",async({page})=>{
 
         
     await rigisterpage.open();
-     await rigisterpage.fillRegisterForm();
-    
-    
     await loginpage.fillLoginForm();
     await loginpage.handeltabs();
 
-    await addtocard.addtocart();
-
-    await payment.fillPaymentForm();
+        await addtocard.addtocart();
+        await payment.fillPaymentForm();
 
 })
