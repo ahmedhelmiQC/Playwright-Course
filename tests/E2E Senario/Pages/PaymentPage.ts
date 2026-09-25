@@ -10,6 +10,7 @@ export class PaymentPage extends basePage{
     readonly country    : Locator;
     readonly countrysuggestion :Locator;
     readonly placeorder : Locator;
+    readonly successMessage : Locator;
 
 
     constructor(page:Page){
@@ -21,6 +22,9 @@ export class PaymentPage extends basePage{
         this.country    = page.getByPlaceholder("Select Country");
         this.countrysuggestion = page.getByRole("button", { name: /France$/, });
         this.placeorder  = page.locator('a.action__submit');
+        this.successMessage = page.getByRole("button",{name:"Click To Download Order Details in CSV"});
+
+
     }
 
     data={
@@ -43,6 +47,7 @@ export class PaymentPage extends basePage{
         await this.countrysuggestion.click();
         await this.placeorder.click();
     }
+    
     
 
 }

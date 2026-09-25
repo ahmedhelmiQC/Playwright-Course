@@ -37,9 +37,8 @@ export class RegisterPage extends basePage{
     data={
         firstName : "ahmed",
         lastName  : "helmi",
-        email     : "ahmed.systemtester@gmail.com",
         phonenumber: "1234567890",
-        password   : "Ahmed@123",
+       
     }
 
     override async open(): Promise<void> {
@@ -47,16 +46,16 @@ export class RegisterPage extends basePage{
     }
 
 
-    async fillRegisterForm():Promise<void>{
+    async fillRegisterForm(email:string , password:string):Promise<void>{
         await this.RegisterLink.click();
         await this.firstName.fill(this.data.firstName);
         await this.lastName.fill(this.data.lastName);
-        await this.email.fill(this.data.email);
+        await this.email.fill(email);
         await this.phoneNumber.fill(this.data.phonenumber);
         await this.occpation.selectOption("Engineer");
         await this.genderMale.click();
-        await this.password.fill(this.data.password);
-        await this.confirmPass.fill(this.data.password);
+        await this.password.fill(password);
+        await this.confirmPass.fill(password);
         await this.checkbox.click();
         await this.registerBtn.click();
     }

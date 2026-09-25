@@ -17,28 +17,28 @@ export class LoginPage extends basePage{
         this.acceleratorLinlk = page.getByRole("link", {name: "accelerator"});
     }
 
-    user={
-        email    : "ahmed.systemtester@gmail.com",
-        password : "Ahmed@123"
-    }
+    // user={
+    //     email    : "ahmed.systemtester@gmail.com",
+    //     password : "Ahmed@123"
+    // }
 
-    async fillLoginForm(){
-        await this.email.fill(this.user.email);
-        await this.password.fill(this.user.password);
+    async fillLoginForm(email:string , password:string){
+        await this.email.fill(email);
+        await this.password.fill(password);
         await this.loginBtn.click();
     }
 
     async handeltabs():Promise<void> {
 
-        const [newTab] = await Promise.all([
+         const [newTab] = await Promise.all([
             this.page.waitForEvent("popup"),
             this.acceleratorLinlk.click()]);
 
-        await newTab.waitForLoadState("domcontentloaded");
-        await  expect(newTab.url()).toContain("rahulshettyacademy");
+         await newTab.waitForLoadState("domcontentloaded");
+         expect(newTab.url()).toContain("rahulshettyacademy");
 
-        await newTab.close();
-        await expect(this.acceleratorLinlk).toBeVisible();
+         await newTab.close();
+         await expect(this.acceleratorLinlk).toBeVisible();
        
     }
  
