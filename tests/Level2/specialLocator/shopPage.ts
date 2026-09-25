@@ -4,13 +4,13 @@ import { basePage } from "./basePage";
 export class shopPage extends basePage{
 
     readonly shopBUT : Locator;
-    readonly product1 : Locator;
-    readonly Product2 : Locator;
+    readonly firstProduct : Locator;
+    readonly lastProduct : Locator;
     readonly checkout : Locator;
 
     products = {
-        ptoduct1 : "iphone X",
-        Product2 : "Blackberry",
+        firstProduct : "iphone X",
+        lastProduct : "Blackberry",
     }
 
     constructor(page:Page)
@@ -18,12 +18,12 @@ export class shopPage extends basePage{
       super(page);  
       this.shopBUT =  page.getByRole("link" , {name:"Shop"});
 
-      this.product1 = page.locator("app-card")
-                    .filter({hasText:(this.products.ptoduct1)})
+      this.firstProduct = page.locator("app-card")
+                    .filter({hasText:(this.products.firstProduct)})
                     .getByRole("button",{name:"Add "});
 
-      this.Product2 = page.locator("app-card")
-                    .filter({hasText:(this.products.Product2)})
+      this.lastProduct = page.locator("app-card")
+                    .filter({hasText:(this.products.lastProduct)})
                     .getByRole("button",{name:"Add "});
 
       this.checkout = page.locator("a").filter({hasText:"Checkout"});
@@ -34,14 +34,14 @@ export class shopPage extends basePage{
         await this.shopBUT.click();
     }
 
-    async selectProduct1():Promise<void>
+    async selectfirstProduct():Promise<void>
     {
-        await this.product1.click();
+        await this.firstProduct.click();
     }
 
-    async selectProduct2():Promise<void>
+    async selectlastProduct():Promise<void>
     {
-        await this.Product2.click();
+        await this.lastProduct.click();
     }
 
     

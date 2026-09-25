@@ -1,7 +1,7 @@
 import { Locator , Page }   from "@playwright/test";
 import { basePage } from "./basePage.ts";
 
-export class homePage extends basePage{
+export class HomePage extends basePage{
 
     readonly name     : Locator;
     readonly email    : Locator;
@@ -16,7 +16,7 @@ export class homePage extends basePage{
         this.name     = page.locator('form input[name="name"]');
         this.email    = page.locator('form input[name="email"]');
         this.password = page.getByPlaceholder("Password");
-        this.checkbox = page.getByRole("checkbox", { name: /Check me out/! });
+        this.checkbox = page.getByRole("checkbox", { name: /Check me out/ });
         this.gender   = page.getByLabel("Gender");
         this.empstatu = page.getByLabel("Employed");
         this.submit   =   page.getByRole("button",{name:"Submit"});
@@ -31,24 +31,17 @@ export class homePage extends basePage{
       await  super.open();
     }
 
-    async fillName():Promise<void>
+    
+    async fillForm():Promise<void>
     {
         await this.name.fill(this.user.name);
-    }
-
-    async fillEmail():Promise<void>
-    {
         await this.email.fill(this.user.email);
-    }
-
-    async fillPassword():Promise<void>
-    {
         await this.password.fill(this.user.password);
     }
 
     async checkBox():Promise<void>
     {
-        this.checkbox.click();
+        await this.checkbox.click();
     }
 
     async selectGender():Promise<void>
