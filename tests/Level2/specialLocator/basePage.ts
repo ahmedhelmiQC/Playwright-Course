@@ -9,6 +9,6 @@ export class basePage{
     }
 
     async open(): Promise<void>{
-        this.page.goto(basePage.URL);
+     await this.page.goto(basePage.URL);
     }
 }
